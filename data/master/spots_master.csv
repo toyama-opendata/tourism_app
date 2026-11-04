@@ -1,0 +1,48 @@
+﻿spot_id,name,municipality,existed_before_revision,available_from,available_to,old_option,new_option,source_column,prior_axis1,prior_axis2,prior_axis3,prior_axis4,notes,prior_status,source_url
+tym001,あさひ舟川「春の四重奏」,朝日町,True,2025-04-28,,あさひ舟川「春の四重奏」,あさひ舟川「春の四重奏」,訪問先_あさひ舟川「春の四重奏」,2,0.2,-0.5,1.2,花景色を歩いて楽しむ季節の名所。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.asahi-tabi.com/sijuusou/
+tym002,雨晴海岸,高岡市,True,2025-04-28,,雨晴海岸,雨晴海岸,訪問先_雨晴海岸,2,-0.8,-0.3,1.7,海越しの山並みを眺める代表的景勝地。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.hrr.mlit.go.jp/tiiki/manaviva/guide/toyama/amaharashi.html
+tym003,井波エリア（井波別院瑞泉寺・八日町通りなど）,南砺市,False,2026-04-01,,,井波エリア（井波別院瑞泉寺・八日町通りなど）,訪問先_井波エリア（井波別院瑞泉寺・八日町通りなど）,-1.8,0.4,-1.5,-0.7,木彫り文化と寺町散策・ものづくり。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.tabi-nanto.jp/archives/category/c_inami
+tym004,岩瀬エリア,富山市,True,2025-04-28,,岩瀬エリア,岩瀬エリア,訪問先_岩瀬エリア,-1.5,-0.2,0.8,0.5,港町の歴史散策と食の楽しみ。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.toyamashi-kankoukyoukai.jp/spot/iwasenomachimami/
+tym005,魚津水族館,魚津市,False,2026-04-01,,,魚津水族館,訪問先_魚津水族館,0.6,-0.5,-1,0.3,水生生物の観察と学び。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.uozu-aquarium.jp/
+tym006,魚津埋没林博物館,魚津市,False,2026-04-01,,,魚津埋没林博物館,訪問先_魚津埋没林博物館,0.2,-0.7,-1.5,-0.9,自然現象を室内で学ぶ博物館。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.city.uozu.toyama.jp/nekkolnd/
+tym007,内川エリア（川の駅新湊など）,射水市,False,2026-04-01,,,内川エリア（川の駅新湊など）,訪問先_内川エリア（川の駅新湊など）,-0.8,-0.8,0.1,-0.3,川沿いの暮らしと町並みをゆっくり散策。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.imizu-kanko.jp/imizu-unique/uchikawa/
+tym008,宇奈月温泉,黒部市,True,2025-04-28,,宇奈月温泉,宇奈月温泉,訪問先_宇奈月温泉,0.8,-1.8,0.6,1.4,峡谷の玄関口の温泉街でくつろぐ。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.unazuki-onsen.com/
+tym009,海の駅蜃気楼,魚津市,False,2026-04-01,,,海の駅蜃気楼,訪問先_海の駅蜃気楼,0.2,-0.7,1.8,-0.4,魚津の魚介を買い物と食事で楽しむ。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.shinkirou.jp/
+tym010,大岩山日石寺,上市町,False,2026-04-01,,,大岩山日石寺,訪問先_大岩山日石寺,-0.7,0.4,-0.8,-0.7,山あいの寺院で文化にふれる。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.town.kamiichi.toyama.jp/page/2047.html
+tym011,海王丸パーク,射水市,True,2025-04-28,,海王丸パーク,海王丸パーク,訪問先_海王丸パーク,0.3,-0.8,-0.7,1,帆船と港の景色を楽しむ公園。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.kaiwomaru.jp/access/
+tym012,春日温泉郷,富山市,False,2026-04-01,,,春日温泉郷,訪問先_春日温泉郷,1,-2,0.4,-1.3,自然に囲まれた温泉で滞在を楽しむ。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.pref.toyama.jp/1603/kurashi/sportsleisure/leisure/kj00011575/kj00011575-034-01.html
+tym013,金屋町 千本格子の家並み,高岡市,False,2026-04-01,,,金屋町 千本格子の家並み,訪問先_金屋町 千本格子の家並み,-2,0.2,-1.1,-0.8,鋳物文化が残る町並みを歩く。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.takaoka.or.jp/viewpoint/detail_3197.html
+tym014,黒部峡谷鉄道,黒部市,True,2025-04-28,,黒部峡谷鉄道,黒部峡谷鉄道,訪問先_黒部峡谷鉄道,2,0.6,-1,1.5,鉄道に乗って峡谷の自然を体感。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.kurotetu.co.jp/spot_unaduki/
+tym015,黒部ダム,立山町,True,2025-04-28,,黒部ダム,黒部ダム,訪問先_黒部ダム,1.6,1,-0.7,1.8,山岳のダムと展望台を巡る名所。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.alpen-route.com/facilities/station/station08.html
+tym016,五箇山,南砺市,True,2025-04-28,,五箇山,五箇山,訪問先_五箇山,-0.5,0.3,-1.4,1.5,山里の合掌造りと生活文化を訪ねる。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.tabi-nanto.jp/about/area01
+tym017,国宝 雲竜山勝興寺,高岡市,False,2026-04-01,,,国宝 雲竜山勝興寺,訪問先_国宝 雲竜山勝興寺,-2,0,-1.1,-0.4,寺院建築をじっくり鑑賞。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.shoukouji.jp/index.html
+tym018,国宝 高岡山瑞龍寺,高岡市,True,2025-04-28,,国宝　高岡山瑞龍寺,国宝 高岡山瑞龍寺,訪問先_国宝 高岡山瑞龍寺,-2,0,-1,1.3,高岡を代表する禅宗建築を鑑賞。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://zuiryuji.jp/
+tym019,魚の駅生地,黒部市,False,2026-04-01,,,魚の駅生地,訪問先_魚の駅生地,0.2,-0.6,2,-0.8,漁港の鮮魚と土地の味を楽しむ。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.jf-kurobe.jp/sakananoeki-ikuji/index.php
+tym020,三郎丸蒸留所（若鶴酒造）,砺波市,False,2026-04-01,,,三郎丸蒸留所（若鶴酒造）,訪問先_三郎丸蒸留所（若鶴酒造）,-1.4,0.3,-1.3,-0.8,ウイスキーの製造文化と見学体験。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.wakatsuru.co.jp/saburomaru/
+tym021,庄川峡遊覧船,砺波市,True,2025-04-28,,庄川峡遊覧船,庄川峡遊覧船,訪問先_庄川峡遊覧船,1.8,-1,-0.9,0.4,船上から峡谷の風景をゆっくり楽しむ。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://shogawa-yuran.co.jp/wp/date/2026/
+tym022,称名滝,立山町,True,2025-04-28,,称名滝,称名滝,訪問先_称名滝,2,1.5,-1,1.0,歩いて滝の景観を体感する。2026-10-31ユーザー確認：現場の知見・観光サイト閲覧状況等を踏まえ穴場ではなく定番側とする。閲覧数そのものは本集計に未投入。軸4の1.0は定番保護の境界に合わせた実装値。,axis4_direction_user_confirmed_other_axes_draft,https://www.town.tateyama.toyama.jp/soshikikarasagasu/shokokankoka/kankokoryugakari/3/9269.html
+tym023,新湊大橋,射水市,True,2025-04-28,,新湊大橋,新湊大橋,訪問先_新湊大橋,0.6,0.2,-0.6,0.9,港の橋と広がる眺望を楽しむ。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.imizu-kanko.jp/spots/shinminato-oohashi/
+tym024,新湊きっときと市場,射水市,True,2025-04-28,,新湊きっときと市場,新湊きっときと市場,訪問先_新湊きっときと市場,0,-0.5,2,0.8,魚介の食事と買い物が中心。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.imizu-kanko.jp/en/spots/kittokito-ichiba/
+tym025,高岡大仏,高岡市,True,2025-04-28,,高岡大仏,高岡大仏,訪問先_高岡大仏,-2,-0.2,-0.7,1.3,鋳物文化にふれる街中の名所。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.takaoka.or.jp/viewpoint/detail_3204.html
+tym026,立山黒部アルペンルート,立山町,True,2025-04-28,,立山黒部アルペンルート,立山黒部アルペンルート,訪問先_立山黒部アルペンルート,2,1.5,-1,2,乗り物と徒歩で巡る代表的山岳観光。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.alpen-route.com/information/faq.html
+tym027,砺波チューリップ公園,砺波市,True,2025-04-28,,砺波チューリップ公園,砺波チューリップ公園,訪問先_砺波チューリップ公園,1.7,-0.3,-0.5,1.4,花を楽しむ公園と春の名所。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.city.tonami.lg.jp/section/1607p/
+tym028,富山県[立山博物館],立山町,False,2026-04-01,,,富山県[立山博物館],訪問先_富山県[立山博物館],-1.2,-0.3,-1.7,-1.1,立山信仰と歴史を学ぶ。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://tatehaku.jp/
+tym029,富山県中央植物園,富山市,False,2026-04-01,,,富山県中央植物園,訪問先_富山県中央植物園,1.8,-0.7,-1,-0.9,植物を観察しながら穏やかに散策。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.bgtym.org/guide/
+tym030,富山県美術館,富山市,True,2025-04-28,,富山県美術館,富山県美術館,訪問先_富山県美術館,-1.8,-0.8,-1.4,0.9,美術とデザインを鑑賞。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://tad-toyama.jp/visitor/general
+tym031,富山市ガラス美術館,富山市,True,2025-04-28,,富山市ガラス美術館,富山市ガラス美術館,訪問先_富山市ガラス美術館,-2,-0.8,-1.4,1.4,ガラス美術を鑑賞する市街地の文化施設。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.city.toyama.lg.jp/shisei/soshiki/1010706/1001773.html
+tym032,富山市ファミリーパーク,富山市,False,2026-04-01,,,富山市ファミリーパーク,訪問先_富山市ファミリーパーク,1.4,0.7,-1.2,0.4,里山で動物を観察して歩く。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.toyama-familypark.jp/
+tym033,富山城,富山市,True,2025-04-28,,富山城,富山城,訪問先_富山城,-1.8,0.1,-0.8,1,城と郷土の歴史を知る。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.toyamashi-kankoukyoukai.jp/spot/toyamajou/
+tym034,入善海洋深層水パーク・入善牡蠣ノ星,入善町,False,2026-04-01,,,入善海洋深層水パーク・入善牡蠣ノ星,訪問先_入善海洋深層水パーク・入善牡蠣ノ星,0.3,-0.3,1,-1.2,海洋深層水の見学と牡蠣の食を楽しむ。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.town.nyuzen.toyama.jp/gyosei/soshiki/kirakira/2/4/1633.html
+tym035,能作,高岡市,False,2026-04-01,,,能作,訪問先_能作,-1.7,0.6,-1.6,-0.2,鋳物の工場見学・製作体験。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.nousaku.co.jp/factory/
+tym036,ヒスイ海岸（宮崎・境海岸）,朝日町,False,2026-04-01,,,ヒスイ海岸（宮崎・境海岸）,訪問先_ヒスイ海岸（宮崎・境海岸）,2,0.8,-1.3,-0.7,小石の海岸で自然とヒスイ文化を楽しむ。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.asahi-tabi.com/hisuikaigan/
+tym037,氷見温泉郷,氷見市,False,2026-04-01,,,氷見温泉郷,訪問先_氷見温泉郷,1,-2,1.3,0.8,海辺の温泉滞在と氷見の食。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://shoryudo.go-centraljapan.jp/ja/spot_19.html
+tym038,氷見漁港場外市場 ひみ番屋街,氷見市,False,2026-04-01,,,氷見漁港場外市場 ひみ番屋街,訪問先_氷見漁港場外市場 ひみ番屋街,0,-0.5,2,1.3,氷見の食事と土産を楽しむ市場。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://himi-banya.jp/guide/
+tym039,富岩運河環水公園,富山市,True,2025-04-28,,富岩運河環水公園,富岩運河環水公園,訪問先_富岩運河環水公園,0.5,-1.5,0,1.5,都市の水辺でゆっくり過ごす。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.kansui-park.jp/how-to-enjoy-the-park/map/
+tym040,ほたるいかミュージアム,滑川市,True,2025-04-28,,ほたるいかミュージアム,ほたるいかミュージアム,訪問先_ほたるいかミュージアム,0.3,-0.5,-1.5,0.8,富山湾の生き物を学ぶ体験型施設。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://hotaruikamuseum.com/museum/about
+tym041,ますのすし本舗 源 ますのすしミュージアム,富山市,False,2026-04-01,,,ますのすし本舗 源 ますのすしミュージアム,訪問先_ますのすし本舗 源 ますのすしミュージアム,-0.8,-0.5,1.1,-0.5,ますのすしの食文化と製造を知る。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.minamoto.co.jp/museum
+tym042,松川遊覧船,富山市,False,2026-04-01,,,松川遊覧船,訪問先_松川遊覧船,0.5,-1.2,-0.7,0.4,船から街と川辺の景色を楽しむ。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://matsukawa-cruise.jp/
+tym043,道の駅KOKOくろべ,黒部市,False,2026-04-01,,,道の駅KOKOくろべ,訪問先_道の駅KOKOくろべ,0,-0.5,1.6,-0.3,地域の味と買い物の立ち寄り先。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.city.kurobe.toyama.jp/category/page.aspx?servno=31909
+tym044,道の駅メルヘンおやべ,小矢部市,False,2026-04-01,,,道の駅メルヘンおやべ,訪問先_道の駅メルヘンおやべ,-0.1,-0.5,1.5,-1,地域の食と土産を探す立ち寄り先。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://michinoeki-oyabe.com/
+tym045,三井アウトレットパーク北陸小矢部,小矢部市,False,2026-04-01,,,三井アウトレットパーク北陸小矢部,訪問先_三井アウトレットパーク北陸小矢部,-1.7,0.2,2,0.6,都市型のショッピングを楽しむ。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://mitsui-shopping-park.com/mop/oyabe/
+tym046,八尾エリア（八尾おわら資料館、八尾曳山会館など）,富山市,False,2026-04-01,,,八尾エリア（八尾おわら資料館、八尾曳山会館など）,訪問先_八尾エリア（八尾おわら資料館、八尾曳山会館など）,-2,0.4,-1.5,-0.3,坂の町並みとおわら・曳山の文化。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.yatsuo.net/ythl
+tym047,山町筋 土蔵造りの町並み,高岡市,False,2026-04-01,,,山町筋 土蔵造りの町並み,訪問先_山町筋 土蔵造りの町並み,-2,0.2,-0.9,-0.7,商人の町の土蔵造りを散策。軸4は知名度の編集上の仮説で要確認。,draft_pending_review,https://www.takaoka-st.jp/wp/wp-content/uploads/ichibamachimidokoromap2023.pdf

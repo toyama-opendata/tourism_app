@@ -1,0 +1,17 @@
+data/raw/
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+__pycache__/
+.pytest_cache/
+.venv/
+.openai/
+.tools/
+
+# Local review material and original generated artwork
+docs/phase1/
+docs/photo-reuse.json
+docs/character-designs/
+docs/character-lineup.png
