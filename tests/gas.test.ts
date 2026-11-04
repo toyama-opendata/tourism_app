@@ -7,7 +7,7 @@ import { questions } from '../src/content/questions';
 import { scoreAnswers, typeCode } from '../src/lib/diagnosis';
 import { travelTypes } from '../src/content/types';
 const context=vm.createContext({});vm.runInContext(readFileSync('gas/Code.gs','utf8'),context);
-function payload(){const id=randomUUID(),a=Array(16).fill(3);return {event_id:id,result_id:id,event_type:'diagnosis',timestamp:new Date().toISOString(),session_id:randomUUID(),app_version:'0.2.0',consent:true,answers:Object.fromEntries(a.map((n,i)=>[`q${i+1}`,n])),axis_scores:scoreAnswers(a),type:typeCode(scoreAnswers(a)),attributes:{age:null as number|null,prefecture:null as string|null,companion:null as number|null,experience:null as string|null},recommended_spot_ids:['tym001','tym002','tym003','tym004','tym005','tym006'],clicked_spot_id:undefined as string|undefined};}
+function payload(){const id=randomUUID(),a=Array(20).fill(3);return {event_id:id,result_id:id,event_type:'diagnosis',timestamp:new Date().toISOString(),session_id:randomUUID(),app_version:'0.3.0',consent:true,answers:Object.fromEntries(a.map((n,i)=>[`q${i+1}`,n])),axis_scores:scoreAnswers(a),type:typeCode(scoreAnswers(a)),attributes:{age:null as number|null,prefecture:null as string|null,companion:null as number|null,experience:null as string|null},recommended_spot_ids:['tym001','tym002','tym003','tym004','tym005','tym006'],clicked_spot_id:undefined as string|undefined};}
 test('GAS validates all 16 frontend types and zero attribute codes',()=>{
   for(const t of travelTypes){const p=payload(),a=questions.map(q=>(t.code[q.axis]==='N'||t.code[q.axis]==='A'||t.code[q.axis]==='G'||t.code[q.axis]==='M'?1:-1)*q.direction>0?5:1);p.answers=Object.fromEntries(a.map((n,i)=>[`q${i+1}`,n]));p.axis_scores=scoreAnswers(a);p.type=typeCode(p.axis_scores);p.attributes.age=0;p.attributes.companion=0;assert.doesNotThrow(()=>context.validatePayload(p));}
 });
@@ -28,4 +28,19 @@ test('GAS handler deduplicates event IDs under a lock and never stores invalid e
   assert.equal(context.doPost(event).ok,true);assert.equal(rows.length,2);assert.equal(held,false);
   assert.equal(context.doPost(event).duplicate,true);assert.equal(rows.length,2);
   p.consent=false;assert.equal(context.doPost({postData:{contents:JSON.stringify(p)}}).ok,false);assert.equal(rows.length,2);
+});
+
+test('new fifth questions affect their own axis and GAS stores all 20 answers',()=>{
+  for(const index of [4,9,14,19]){
+    const p=payload(),a=Array(20).fill(3);a[index]=5;
+    p.answers=Object.fromEntries(a.map((n,i)=>['q'+(i+1),n]));
+    p.axis_scores=scoreAnswers(a);p.type=typeCode(p.axis_scores);
+    const expected=[0,0,0,0];expected[Math.floor(index/5)]=-.2;
+    assert.deepEqual(p.axis_scores,expected);
+    const row=context.validatePayload(p);
+    assert.equal(row.length,context.HEADERS.length);
+    assert.equal(row[8+index],5);
+  }
+  const p=payload();delete p.answers.q20;assert.throws(()=>context.validatePayload(p));
+  const old=payload();old.app_version='0.2.0';assert.throws(()=>context.validatePayload(old));
 });

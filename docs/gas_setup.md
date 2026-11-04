@@ -36,7 +36,7 @@ GitHubでは「Settings → Secrets and variables → Actions → Variables」�
 本物のURLを設定した後に、以下を確認してください。現時点ではGASを外部デプロイしていないため、この確認は未実施です。
 
 1. 同意なしで診断：シートに行が増えない。
-2. 同意ありで診断：`diagnosis` が1行追加される。q1〜q16、4軸、タイプ、任意属性、おすすめ6件が入る。
+2. 同意ありで診断：`diagnosis` が1行追加される。q1〜q20、4軸、タイプ、任意属性、おすすめ6件が入る。
 3. 結果の公式リンクをクリック：`spot_click` が追加され、同じ `result_id` と該当 `clicked_spot_id` が入る。
 4. 結果画面でクリック送信を停止：以後のクリックで行が増えない。
 5. 通信失敗時の再送：同じ `event_id` は重複登録しない。
@@ -51,7 +51,7 @@ GitHubでは「Settings → Secrets and variables → Actions → Variables」�
 - `session_id`：ブラウザに保存するUUID。同じブラウザの利用を関連付ける仮名IDであり、完全に連結不能なデータではありません。
 - `result_id`：1回の診断を識別。クリックとの関連付けに使用。
 - `event_id`：各送信を識別。排他ロック内で重複確認する。
-- `q1`〜`q16`：1〜5。5が「とてもそう思う」。各軸4問目は逆転。
+- `q1`〜`q20`：1〜5。5が「とてもそう思う」。各軸4・5問目は逆転。
 - `axis1`〜`axis4`：[-1,+1]。GASでも回答から再計算して一致を確認。
 - `type`：4軸の符号から再計算して一致を確認。中立は左側。
 - `recommended_spot_ids`：上位3件＋追加3件の順。`|` 区切り。
@@ -66,3 +66,5 @@ GitHubでは「Settings → Secrets and variables → Actions → Variables」�
 質問順、逆転項目、属性、タイプ、地点数、アプリ版を変更する場合はGASの検証も同期してください。`npm test` でフロントとの一致を検証できます。シートの列を変更する場合は新しいシート名を使うなど、既存回答の列ずれを避けてください。既存ヘッダーと異なると保存を拒否します。
 
 参照：[Google公式 Web Apps](https://developers.google.com/apps-script/guides/web)、[Content Service](https://developers.google.com/apps-script/guides/content)。
+
+20問版は app_version=0.3.0。q1〜q5=N/C、q6〜q10=A/R、q11〜q15=G/E、q16〜q20=M/H。各組の4・5問目が逆転項目です。16問版と質問番号の対応が変わっています。旧eventsシートがある場合は保管用に改名してからsetup()で20問用を新規作成してください。

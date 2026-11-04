@@ -3,7 +3,7 @@ import attributes from '../content/attributes.json';
 export type Attributes={age:number|null; prefecture:string|null; companion:number|null; experience:string|null};
 export const emptyAttributes:Attributes={age:null,prefecture:null,companion:null,experience:null};
 export { attributes };
-export const appVersion='0.2.0';
+export const appVersion='0.3.0';
 let memorySession:string|undefined;
 export function uuid(){ return crypto.randomUUID(); }
 export function sessionId(){

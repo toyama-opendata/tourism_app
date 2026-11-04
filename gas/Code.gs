@@ -2,10 +2,10 @@
  * Set SPREADSHEET_ID in Script Properties, run setup(), then deploy as web app.
  * No personal free text, email address, IP address or user agent is stored.
  */
-var SCHEMA_VERSION = '0.2.0';
+var SCHEMA_VERSION = '0.3.0';
 var SHEET_NAME = 'events';
 var PREFECTURES = ['北海道','青森県','岩手県','宮城県','秋田県','山形県','福島県','茨城県','栃木県','群馬県','埼玉県','千葉県','東京都','神奈川県','新潟県','富山県','石川県','福井県','山梨県','長野県','岐阜県','静岡県','愛知県','三重県','滋賀県','京都府','大阪府','兵庫県','奈良県','和歌山県','鳥取県','島根県','岡山県','広島県','山口県','徳島県','香川県','愛媛県','高知県','福岡県','佐賀県','長崎県','熊本県','大分県','宮崎県','鹿児島県','沖縄県'];
-var HEADERS = ['received_at','timestamp','event_id','result_id','event_type','session_id','app_version','consent'].concat(Array.from({length:16},function(_,i){return 'q'+(i+1);})).concat(['axis1','axis2','axis3','axis4','type','age','prefecture','companion','experience','recommended_spot_ids','clicked_spot_id']);
+var HEADERS = ['received_at','timestamp','event_id','result_id','event_type','session_id','app_version','consent'].concat(Array.from({length:20},function(_,i){return 'q'+(i+1);})).concat(['axis1','axis2','axis3','axis4','type','age','prefecture','companion','experience','recommended_spot_ids','clicked_spot_id']);
 
 function validUuid(v){return typeof v==='string' && /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(v);}
 function validSpot(v){return typeof v==='string' && /^tym\d{3}$/.test(v) && Number(v.slice(3))>=1 && Number(v.slice(3))<=47;}
@@ -18,12 +18,12 @@ function validatePayload(p){
   assertCondition(p.event_type!=='diagnosis'||p.event_id===p.result_id,'result_id');
   assertCondition(p.app_version===SCHEMA_VERSION,'app_version');
   assertCondition(typeof p.timestamp==='string' && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/.test(p.timestamp) && Number.isFinite(Date.parse(p.timestamp)),'timestamp');
-  assertCondition(p.answers && typeof p.answers==='object' && Object.keys(p.answers).length===16,'answers');
+  assertCondition(p.answers && typeof p.answers==='object' && Object.keys(p.answers).length===20,'answers');
   var expected=[0,0,0,0],answers=[];
-  for(var i=0;i<16;i++){
+  for(var i=0;i<20;i++){
     var value=p.answers['q'+(i+1)];
     assertCondition(Number.isInteger(value)&&value>=1&&value<=5,'answer_range');
-    answers.push(value);expected[Math.floor(i/4)]+=((value-3)/2)*(i%4===3?-1:1)/4;
+    answers.push(value);expected[Math.floor(i/5)]+=((value-3)/2)*(i%5>=3?-1:1)/5;
   }
   assertCondition(Array.isArray(p.axis_scores)&&p.axis_scores.length===4,'axis_scores');
   p.axis_scores.forEach(function(value,i){assertCondition(typeof value==='number'&&Number.isFinite(value)&&Math.abs(value-expected[i])<1e-9,'axis_mismatch');});

@@ -15,12 +15,12 @@ test('16 types are reachable, with consistent reverse-scored questions',()=>{
     const {primary,extra}=recommendations(desired,data.spots);
     assert.equal(new Set([...primary,...extra].map(s=>s.id)).size,6);
   }
-  axes.forEach((_,i)=>{const q=questions.filter(q=>q.axis===i);assert.equal(q.length,4);assert.ok(q.some(q=>q.direction===-1));});
+  axes.forEach((_,i)=>{const q=questions.filter(q=>q.axis===i);assert.equal(q.length,5);assert.ok(q.some(q=>q.direction===-1));});
 });
 test('neutral scores and incomplete answers are handled explicitly',()=>{
-  assert.deepEqual(scoreAnswers(Array(16).fill(3)),[0,0,0,0]);
+  assert.deepEqual(scoreAnswers(Array(20).fill(3)),[0,0,0,0]);
   assert.equal(typeCode([0,0,0,0]),'NAGM');
-  assert.throws(()=>scoreAnswers([1,2]));assert.throws(()=>scoreAnswers(Array(16).fill(0)));
+  assert.throws(()=>scoreAnswers([1,2]));assert.throws(()=>scoreAnswers(Array(20).fill(0)));
 });
 test('municipality penalty diversifies near-equal choices',()=>{
   const s=(id:string,city:string,n:number):Spot=>({id,name:id,municipality:city,scores:[n,0,0,0],n:100,reason:null,description:'',url:'https://example.com'});

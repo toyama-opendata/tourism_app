@@ -2,9 +2,9 @@ import { questions, axes } from '../content/questions';
 export type Vector = [number,number,number,number];
 export interface Spot { id:string; name:string; municipality:string; scores:Vector; n:number; reason:string|null; description:string; url:string; }
 export function scoreAnswers(answers: readonly number[]): Vector {
-  if(answers.length!==16 || answers.some(x=>!Number.isInteger(x)||x<1||x>5)) throw new Error('16問すべてに回答してください');
+  if(answers.length!==questions.length || answers.some(x=>!Number.isInteger(x)||x<1||x>5)) throw new Error('20問すべてに回答してください');
   const sums:Vector=[0,0,0,0];
-  questions.forEach((q,i)=>{sums[q.axis]+=((answers[i]-3)/2)*q.direction/4;});
+  questions.forEach((q,i)=>{sums[q.axis]+=((answers[i]-3)/2)*q.direction/questions.filter(item=>item.axis===q.axis).length;});
   return sums;
 }
 // 中立(0)は左に分類。画面では同点・中立であることを別途明示する。

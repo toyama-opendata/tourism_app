@@ -21,7 +21,7 @@ async function completeQuestions(user:ReturnType<typeof userEvent.setup>){
     await user.click(screen.getByRole('button',{name:i===3?/最後のステップへ/:/次のページへ/}));
   }
 }
-test('full 16-question flow, optional skip, result, privacy return and restart without transmission',async()=>{
+test('full 20-question flow, optional skip, result, privacy return and restart without transmission',async()=>{
   const user=userEvent.setup();render(<App/>);
   await completeQuestions(user);
   expect((screen.getByRole('checkbox') as HTMLInputElement).checked).toBe(false);
@@ -60,17 +60,17 @@ test('back retains answers, consent sends once, zero codes preserved, revoke sto
   expect(collection.sendEvent).toHaveBeenCalledTimes(2);
 });
 
-test('four questions per page, incomplete answers prevent advancing, progress counts answers',async()=>{
+test('five questions per page, incomplete answers prevent advancing, progress counts answers',async()=>{
   const user=userEvent.setup();render(<App/>);
   await user.click(screen.getByRole('button',{name:/旅タイプを診断する/}));
-  expect(screen.getAllByRole('group')).toHaveLength(4);
+  expect(screen.getAllByRole('group')).toHaveLength(5);
   const next=screen.getByRole('button',{name:/次のページへ/}) as HTMLButtonElement;
   expect(next.disabled).toBe(true);
   const radios=screen.getAllByRole('radio',{name:'とてもそう思う'});
-  for(const radio of radios.slice(0,3)) await user.click(radio);
+  for(const radio of radios.slice(0,4)) await user.click(radio);
   expect(next.disabled).toBe(true);
-  expect(screen.getByRole('progressbar').getAttribute('value')).toBe('3');
-  await user.click(radios[3]);expect(next.disabled).toBe(false);
+  expect(screen.getByRole('progressbar').getAttribute('value')).toBe('4');
+  await user.click(radios[4]);expect(next.disabled).toBe(false);
   await user.click(next);
   expect(screen.getAllByRole('radio').every(r=>!(r as HTMLInputElement).checked)).toBe(true);
 });
