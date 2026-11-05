@@ -26,12 +26,12 @@ test('full 20-question flow, optional skip, result, privacy return and restart w
   await completeQuestions(user);
   expect((screen.getByRole('checkbox') as HTMLInputElement).checked).toBe(false);
   await user.click(screen.getByRole('button',{name:'属性入力をスキップして結果を見る'}));
-  await screen.findByRole('heading',{name:'山岳の美食家'});
+  await screen.findByRole('heading',{name:'自然の美食家'});
   expect(screen.getAllByRole('link',{name:/の公式案内を見る/}).length).toBe(6);
   expect(collection.sendEvent).not.toHaveBeenCalled();expect(localStorage.length).toBe(0);
   await user.click(screen.getByRole('button',{name:'データの取り扱い'}));
   await user.click(screen.getByRole('button',{name:'戻る'}));
-  expect(screen.getByRole('heading',{name:'山岳の美食家'})).toBeTruthy();
+  expect(screen.getByRole('heading',{name:'自然の美食家'})).toBeTruthy();
   await user.click(screen.getByRole('button',{name:/もう一度診断する/}));
   expect(screen.getAllByRole('radio').every(r=>!(r as HTMLInputElement).checked)).toBe(true);
 });
