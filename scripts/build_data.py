@@ -11,6 +11,7 @@ import yaml
 from scoring import nps, valid_nps, zscore, shrink, business_only, eligible_visits, log_lift_difference, reason_text, mainstream_hidden
 from inspect_sources import csv_read
 from export_public import export_public
+from reason_candidates import evaluate, select, format_reason
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -20,6 +21,8 @@ def main():
     parser.add_argument('--input',type=Path,default=local_input if local_input.exists() else ROOT.parent/'dataset/出力データ/opendata_dataset_merge_202608.xlsx')
     args=parser.parse_args()
     cfg=yaml.safe_load((ROOT/'config/axis_mapping.yaml').read_text('utf-8'))
+    reason_settings=yaml.safe_load((ROOT/'config/reason_review.yaml').read_text('utf-8'))
+    reason_overrides=yaml.safe_load((ROOT/'config/reason_overrides.yaml').read_text('utf-8'))
     if args.input.suffix.lower()=='.csv': d,encoding=csv_read(args.input)
     else: d=pd.read_excel(args.input); encoding='XLSX (Unicode XML)'
     source_count=len(d)
@@ -67,10 +70,12 @@ def main():
         row.update(trip_satisfaction_valid_n=len(sat),trip_satisfaction_top2=float(sat.ge(4).mean()) if len(sat) else None,revisit_valid_n=len(revisit),revisit_top2=float(revisit.ge(4).mean()) if len(revisit) else None)
         # Explain an exact original purpose, not a combined synthetic group.
         candidates=[('訪問目的_'+name,name) for names in cfg['groups'].values() for name in names]
-        counts=[(int(d.loc[visited,c].eq(1).sum()),name) for c,name in candidates]
-        count,name=max(counts,key=lambda x:x[0])
-        text=reason_text(name,count,n,cfg['minimum_reason_n'])
-        row['reason']=text.replace('訪れた回答','訪問・訪問予定とした回答') if text else ''
+        metrics=[dict(purpose=name, **evaluate(int(d.loc[visited,c].eq(1).sum()),n,
+                    int(d.loc[eligible,c].eq(1).sum()),total,reason_settings)) for c,name in candidates]
+        chosen=select(metrics,reason_overrides.get(spot['spot_id']),reason_settings)
+        if chosen is None:
+            raise ValueError(f'{spot["spot_id"]}: 理由候補なし。表示方針未決定のため公開データ更新を停止。')
+        row['reason']=format_reason(chosen)
         rows.append(row)
     result=pd.DataFrame(rows)
     for axis in range(1,4): result[f'data_axis{axis}']=zscore(result[f'axis{axis}_log_lift_diff']).clip(-2,2)
