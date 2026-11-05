@@ -51,3 +51,11 @@ h1,h2{font-family:inherit;font-weight:800}
 
 .about-short{max-width:800px}.about-short .about-heading{padding-bottom:15px}.about-story{display:grid;gap:12px;margin:10px 0 25px}.about-story-step{display:grid;grid-template-columns:140px 1fr;gap:28px;align-items:center;padding:22px 0;border-bottom:1px solid var(--line)}.about-portrait{overflow:hidden;border-radius:24px}.about-portrait img{width:100%;height:auto}.about-story-step .eyebrow{margin-bottom:5px}.about-story-step h2{font-size:1.2rem;margin-bottom:10px}.about-story-step p:last-child{font-size:.9rem;line-height:1.9;margin-bottom:0}.about-data-line{text-align:center;font-size:.95rem;margin:28px 0 0}.about-data-line strong{color:var(--green)}.about-data-line small{display:block;font-size:.7rem;margin-top:5px;color:var(--muted)}.about-source-compact{font-size:.68rem;color:var(--muted);border-top:1px solid var(--line);padding-top:18px;line-height:1.9}.about-source-compact a{display:block;text-decoration:underline;text-underline-offset:3px;margin-top:6px}
 @media(max-width:600px){.about-short .about-heading h1{font-size:1.65rem}.about-story-step{grid-template-columns:85px 1fr;gap:16px;padding:20px 0;align-items:start}.about-portrait{border-radius:16px;margin-top:5px}.about-story-step h2{font-size:1.02rem;line-height:1.6}.about-story-step p:last-child{font-size:.82rem}.about-data-line{font-size:.85rem}.about-short .about-actions{margin:25px 0}}
+
+/* Shared Toyama Tabimoyou wordmark: mountain, sea and a small sun. */
+.brand .brand-logo{width:150px;height:auto;display:block}
+.travel-window .travel-logo-title{margin:12px auto 18px;line-height:1;width:min(100%,350px)}
+.travel-logo-title img{width:100%;height:auto}
+.travel-window .edition{margin-bottom:4px}
+@media(max-width:800px){.brand .brand-logo{width:132px}.travel-window .travel-logo-title{width:min(100%,285px);margin:12px auto 16px}.site-header{padding-top:14px;padding-bottom:14px}}
+@media(max-width:380px){.brand .brand-logo{width:118px}.travel-window .travel-logo-title{width:245px;max-width:100%}}
