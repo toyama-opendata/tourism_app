@@ -27,7 +27,14 @@ test('full 20-question flow, optional skip, result, privacy return and restart w
   expect((screen.getByRole('checkbox') as HTMLInputElement).checked).toBe(false);
   await user.click(screen.getByRole('button',{name:'属性入力をスキップして結果を見る'}));
   await screen.findByRole('heading',{name:'自然の美食家'});
+  expect(screen.getAllByRole('link',{name:/の公式案内を見る/}).length).toBe(3);
+  const more=screen.getByRole('button',{name:'ほかの候補も見る'});
+  expect(more.getAttribute('aria-expanded')).toBe('false');
+  await user.click(more);
   expect(screen.getAllByRole('link',{name:/の公式案内を見る/}).length).toBe(6);
+  expect(screen.getByRole('button',{name:'ほかの候補を閉じる'}).getAttribute('aria-expanded')).toBe('true');
+  await user.click(screen.getByRole('button',{name:'ほかの候補を閉じる'}));
+  expect(screen.getAllByRole('link',{name:/の公式案内を見る/}).length).toBe(3);
   expect(collection.sendEvent).not.toHaveBeenCalled();expect(localStorage.length).toBe(0);
   await user.click(screen.getByRole('button',{name:'データの取り扱い'}));
   await user.click(screen.getByRole('button',{name:'戻る'}));

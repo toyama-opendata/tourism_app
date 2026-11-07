@@ -59,3 +59,5 @@ h1,h2{font-family:inherit;font-weight:800}
 .travel-window .edition{margin-bottom:4px}
 @media(max-width:800px){.brand .brand-logo{width:132px}.travel-window .travel-logo-title{width:min(100%,285px);margin:12px auto 16px}.site-header{padding-top:14px;padding-bottom:14px}}
 @media(max-width:380px){.brand .brand-logo{width:118px}.travel-window .travel-logo-title{width:245px;max-width:100%}}
+
+.extra-toggle{display:flex;justify-content:center;margin:28px 0 0}.extra-toggle .button{min-width:240px}
